@@ -1,8 +1,7 @@
-package com.bank.views;
+package com.bank.views.tabs;
 
 import com.bank.config.Colors;
 import com.bank.ui.Label;
-import com.bank.ui.Tab;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
@@ -16,7 +15,7 @@ import java.awt.*;
  * label and applies a consistent layout and styling.
  * </p>
  */
-public class DashboardPanel extends JPanel {
+public class TabList extends JPanel {
     /** The array of tabs displayed in the dashboard. */
     private final Tab[] tabs;
 
@@ -30,7 +29,7 @@ public class DashboardPanel extends JPanel {
      *
      * @param tabs an array of {@link Tab} objects to be displayed in the dashboard
      */
-    public DashboardPanel(Tab[] tabs) {
+    public TabList(Tab[] tabs) {
         this.tabs = tabs;
 
         this.setBorder(new MatteBorder(0, 0, 0, 1, Colors.BORDER_COLOR));

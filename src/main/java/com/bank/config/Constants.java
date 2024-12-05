@@ -1,6 +1,6 @@
 package com.bank.config;
 
-import com.bank.ui.Tab;
+import com.bank.views.tabs.Tab;
 import com.bank.views.AddEntityPanel;
 import com.bank.views.ViewEntityPanel;
 

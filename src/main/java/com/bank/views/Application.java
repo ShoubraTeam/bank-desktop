@@ -2,7 +2,7 @@ package com.bank.views;
 
 import com.bank.config.Colors;
 import com.bank.config.Constants;
-import com.bank.ui.TabPanel;
+import com.bank.views.tabs.TabPanel;
 
 import javax.swing.*;
 

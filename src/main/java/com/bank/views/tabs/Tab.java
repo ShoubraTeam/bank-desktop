@@ -1,4 +1,4 @@
-package com.bank.ui;
+package com.bank.views.tabs;
 
 import com.bank.config.Colors;
 import com.bank.config.TabKey;

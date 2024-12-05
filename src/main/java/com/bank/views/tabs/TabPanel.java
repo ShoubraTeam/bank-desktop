@@ -1,7 +1,6 @@
-package com.bank.ui;
+package com.bank.views.tabs;
 
 import com.bank.views.ContentPanel;
-import com.bank.views.DashboardPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +10,7 @@ import java.awt.*;
  * <p>
  * This class extends {@link JPanel} and organizes tabs along with their
  * associated views. It uses a {@link ContentPanel} to dynamically display
- * the content of the active tab and a {@link DashboardPanel} to display
+ * the content of the active tab and a {@link TabList} to display
  * the tab controls on the left side of the panel.
  * </p>
  */
@@ -23,12 +22,12 @@ public class TabPanel extends JPanel {
     private final ContentPanel contentPanel;
 
     /** The panel used to display the tab controls. */
-    private final DashboardPanel dashboardPanel;
+    private final TabList tabList;
 
     /**
      * Constructs a new {@code TabPanel} with the specified tabs.
      * <p>
-     * Initializes the layout and adds the {@link DashboardPanel} on the left
+     * Initializes the layout and adds the {@link TabList} on the left
      * and the {@link ContentPanel} in the center. It also sets up the tabs
      * and their associated views for dynamic content switching.
      * </p>
@@ -40,12 +39,13 @@ public class TabPanel extends JPanel {
 
         this.setLayout(new BorderLayout());
         contentPanel = new ContentPanel();
-        dashboardPanel = new DashboardPanel(tabs);
+        tabList = new TabList(tabs);
 
-        this.add(dashboardPanel, BorderLayout.WEST);
+        this.add(tabList, BorderLayout.WEST);
         this.add(contentPanel);
 
         this.initializeTabs();
+        this.setActiveTab(tabs[0]);
     }
 
     /**
@@ -57,14 +57,13 @@ public class TabPanel extends JPanel {
             contentPanel.add(tab.getView(), String.valueOf(tab.getKey()));
             tab.addActionListener((_) -> setActiveTab(tab));
         }
-        this.setActiveTab(tabs[0]);
     }
 
     /**
      * Sets the specified tab as the active tab.
      * <p>
      * This method updates the {@link ContentPanel} to display the view associated
-     * with the active tab and visually highlights the active tab in the {@link DashboardPanel}.
+     * with the active tab and visually highlights the active tab in the {@link TabList}.
      * </p>
      *
      * @param tab the {@link Tab} to be set as active
