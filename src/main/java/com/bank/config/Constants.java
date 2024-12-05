@@ -14,7 +14,7 @@ public class Constants {
     /**
      * An array of {@link Tab} objects representing the available tabs in the
      * application's navigation panel. Each tab is associated with a label,
-     * a unique {@link TabKey}, and a corresponding {@link JPanel} that
+     * a unique {@link TabKey}, and a corresponding <code>JPanel</code> that
      * represents the content for that tab.
      */
     public static final Tab[] tabs = {

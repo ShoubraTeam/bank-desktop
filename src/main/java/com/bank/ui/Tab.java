@@ -16,10 +16,10 @@ import java.awt.*;
  */
 public class Tab extends JButton {
     /** The unique key identifying this tab. */
-    private TabKey key;
+    private final TabKey key;
 
     /** The view (panel) displayed when this tab is active. */
-    private JPanel view;
+    private final JPanel view;
 
     /** Indicates whether this tab is currently active. */
     private boolean active;
