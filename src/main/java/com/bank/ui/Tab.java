@@ -44,7 +44,7 @@ public class Tab extends JButton {
         this.setModel(new FixedStateButtonModel());
         this.setFocusPainted(false);
         this.setForeground(Color.BLACK);
-        this.setBackground(Colors.SECONDRY_BACKGROUND_COLOR);
+        this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
         this.setHorizontalAlignment(SwingConstants.LEFT);
         this.setFont(new Font("Arial", Font.PLAIN, 16));
         this.setBorderPainted(false);
@@ -78,7 +78,7 @@ public class Tab extends JButton {
         if (this.active) {
             this.setBackground(Colors.BACKGROUND_COLOR);
         } else {
-            this.setBackground(Colors.SECONDRY_BACKGROUND_COLOR);
+            this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
         }
     }
 

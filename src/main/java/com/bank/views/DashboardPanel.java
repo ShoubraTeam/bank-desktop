@@ -36,7 +36,7 @@ public class DashboardPanel extends JPanel {
         this.setBorder(new MatteBorder(0, 0, 0, 1, Colors.BORDER_COLOR));
         this.setLayout(new GridLayout(12, 1));
         this.setPreferredSize(new Dimension(250, 0));
-        this.setBackground(Colors.SECONDRY_BACKGROUND_COLOR);
+        this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
 
         this.add(new Label("BANK", SwingConstants.CENTER));
 
