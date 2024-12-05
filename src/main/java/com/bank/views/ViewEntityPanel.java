@@ -1,6 +1,6 @@
 package com.bank.views;
 
-import com.bank.ui.Label;
+import com.bank.ui.Header;
 
 import javax.swing.*;
 
@@ -14,6 +14,6 @@ import javax.swing.*;
  */
 public class ViewEntityPanel extends JPanel {
     public ViewEntityPanel(){
-        this.add(new Label("View Entity"));
+        this.add(new Header("View Entity"));
     }
 }

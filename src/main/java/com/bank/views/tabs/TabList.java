@@ -1,7 +1,7 @@
 package com.bank.views.tabs;
 
 import com.bank.config.Colors;
-import com.bank.ui.Label;
+import com.bank.ui.Header;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
@@ -37,7 +37,7 @@ public class TabList extends JPanel {
         this.setPreferredSize(new Dimension(250, 0));
         this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
 
-        this.add(new Label("BANK", SwingConstants.CENTER));
+        this.add(new Header("BANK", SwingConstants.CENTER));
 
         this.viewTabs();
     }
