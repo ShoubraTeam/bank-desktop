@@ -13,7 +13,7 @@ import javax.swing.*;
  * </p>
  */
 public class AddEntityPanel extends JPanel {
-    public AddEntityPanel(){
+    public AddEntityPanel() {
         this.add(new Header("Add Entity"));
     }
 }

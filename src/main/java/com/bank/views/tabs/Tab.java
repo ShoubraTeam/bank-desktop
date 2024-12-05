@@ -1,7 +1,6 @@
 package com.bank.views.tabs;
 
 import com.bank.config.Colors;
-import com.bank.config.TabKey;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +15,7 @@ import java.awt.*;
  */
 public class Tab extends JButton {
     /** The unique key identifying this tab. */
-    private final TabKey key;
+    private final String key;
 
     /** The view (panel) displayed when this tab is active. */
     private final JPanel view;
@@ -35,7 +34,7 @@ public class Tab extends JButton {
      * @param key  the unique key identifying this tab
      * @param view the {@link JPanel} associated with this tab
      */
-    public Tab(String text, TabKey key, JPanel view) {
+    public Tab(String text, String key, JPanel view) {
         this.key = key;
         this.view = view;
         this.active = false;
@@ -44,7 +43,7 @@ public class Tab extends JButton {
         this.setModel(new FixedStateButtonModel());
         this.setFocusPainted(false);
         this.setForeground(Color.BLACK);
-        this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
+        this.setBackground(Colors.SECONDARY_COLOR);
         this.setHorizontalAlignment(SwingConstants.LEFT);
         this.setFont(new Font("Arial", Font.PLAIN, 16));
         this.setBorderPainted(false);
@@ -53,9 +52,9 @@ public class Tab extends JButton {
     /**
      * Gets the unique key identifying this tab.
      *
-     * @return the {@link TabKey} associated with this tab
+     * @return the {@link String} associated with this tab
      */
-    public TabKey getKey() {
+    public String getKey() {
         return this.key;
     }
 
@@ -78,7 +77,7 @@ public class Tab extends JButton {
         if (this.active) {
             this.setBackground(Colors.BACKGROUND_COLOR);
         } else {
-            this.setBackground(Colors.SECONDARY_BACKGROUND_COLOR);
+            this.setBackground(Colors.SECONDARY_COLOR);
         }
     }
 

@@ -42,7 +42,7 @@ public class TabPanel extends JPanel {
         tabList = new TabList(tabs);
 
         this.add(tabList, BorderLayout.WEST);
-        this.add(contentPanel);
+        this.add(contentPanel, BorderLayout.CENTER);
 
         this.initializeTabs();
         this.setActiveTab(tabs[0]);

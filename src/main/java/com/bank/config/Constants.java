@@ -18,7 +18,7 @@ public class Constants {
      * represents the content for that tab.
      */
     public static final Tab[] tabs = {
-            new Tab("View Entity", TabKey.VIEW_ENTITY, new ViewEntityPanel()),
-            new Tab("Add Entity", TabKey.ADD_ENTITY, new AddEntityPanel()),
+            new Tab("View Entity", "ViewEntity", new ViewEntityPanel()),
+            new Tab("Add Entity", "AddEntity", new AddEntityPanel()),
     };
 }
