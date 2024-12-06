@@ -1,6 +1,7 @@
 package com.bank.ui;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * <p>
@@ -12,4 +13,8 @@ import javax.swing.*;
  * </p>
  */
 public class Label extends JLabel {
+    public Label(String text) {
+        this.setText(text);
+        this.setFont(new Font("Arial", Font.PLAIN, 16));
+    }
 }
