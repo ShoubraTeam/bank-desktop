@@ -4,6 +4,8 @@ import com.bank.views.ContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * A panel that manages a tabbed navigation system for the application.
@@ -55,7 +57,7 @@ public class TabPanel extends JPanel {
     private void initializeTabs() {
         for (Tab tab : this.tabs) {
             contentPanel.add(tab.getView(), String.valueOf(tab.getKey()));
-            tab.addActionListener((_) -> setActiveTab(tab));
+            tab.addActionListener(e->setActiveTab(tab));
         }
     }
 
