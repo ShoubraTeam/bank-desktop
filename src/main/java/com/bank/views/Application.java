@@ -42,7 +42,7 @@ public class Application extends JFrame {
         this.setTitle("BANK");
         this.setLocationRelativeTo(null); // Appear centered of the screen
 
-        this.add(new TabPanel(Constants.tabs));
+        this.add(new TabPanel(Constants.TABS));
 
         this.setVisible(true);
     }
