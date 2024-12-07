@@ -4,8 +4,6 @@ import com.bank.views.ContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * A panel that manages a tabbed navigation system for the application.
@@ -56,8 +54,8 @@ public class TabPanel extends JPanel {
      */
     private void initializeTabs() {
         for (Tab tab : this.tabs) {
-            contentPanel.add(tab.getView(), String.valueOf(tab.getKey()));
-            tab.addActionListener(e->setActiveTab(tab));
+            contentPanel.add(tab.getView(), tab.getKey());
+            tab.addActionListener(e -> setActiveTab(tab));
         }
     }
 
@@ -65,14 +63,15 @@ public class TabPanel extends JPanel {
      * Sets the specified tab as the active tab.
      * <p>
      * This method updates the {@link ContentPanel} to display the view associated
-     * with the active tab and visually highlights the active tab in the {@link TabList}.
+     * with the active tab and visually highlights the active tab in the
+     * {@link TabList}.
      * </p>
      *
      * @param tab the {@link Tab} to be set as active
      */
     private void setActiveTab(Tab tab) {
         CardLayout layout = (CardLayout) contentPanel.getLayout();
-        layout.show(contentPanel, String.valueOf(tab.getKey()));
+        layout.show(contentPanel, tab.getKey());
         for (Tab t : this.tabs) {
             t.setActive(false);
         }
