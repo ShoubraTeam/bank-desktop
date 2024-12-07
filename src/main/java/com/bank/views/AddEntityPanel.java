@@ -1,18 +1,13 @@
 package com.bank.views;
 
-import com.bank.config.ATMconstats;
-import com.bank.ui.*;
-import com.bank.ui.Button;
-import com.bank.ui.Label;
-import com.bank.views.addPanel.RawPanelOneItem;
-import com.bank.views.addPanel.RawPanelTwoItems;
+import com.bank.config.Constants;
+import com.bank.ui.Header;
+import com.bank.views.dynamicform.DynamicForm;
+import com.bank.views.forms.RowPanelOneItem;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 
 /**
@@ -24,41 +19,13 @@ import java.awt.event.ItemListener;
  * </p>
  */
 public class AddEntityPanel extends JPanel {
-    String[] list = {"ATM", "Customer"};
-    ComboBox comboBox;
-
-    ScrollPanel scrollPanel;
-
-
     public AddEntityPanel() {
-        comboBox = new ComboBox(list);
-        scrollPanel = new ScrollPanel();
+        DynamicForm form = new DynamicForm("Entity Type", Constants.ADD_ENTITY_OPTIONS);
 
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
-        this.add(new RawPanelOneItem<Header>(new Header("Add Entity")));
-        this.add(new RawPanelTwoItems<Label, ComboBox>(new Label("Entity Type"), comboBox));
-        this.add(new RawPanelOneItem<JButton>(new Button("OK")));
-        this.add(scrollPanel);
-
-        comboBox.addActionListener(e -> {
-            String itemSelected = comboBox.getSelectedItem().toString();
-            if (itemSelected.equals("ATM")) {
-                showAtmAttribute();
-            } else if (itemSelected.equals("Customer")) {
-                System.out.println("Customer");
-                /*
-                 * function to add the whole attributes of Customer Entity
-                 * */
-            }
-        });
-    }
-
-    public void showAtmAttribute() {
-        for (RawPanelTwoItems atmAttribute : ATMconstats.Attributes) {
-            javax.swing.SwingUtilities.invokeLater(() -> {
-                scrollPanel.add(atmAttribute);
-            });
-        }
+        this.setBorder(new EmptyBorder(24, 24, 24, 24)); // add spacing
+        this.setLayout(new BorderLayout(21, 12));
+        this.add(new RowPanelOneItem<Header>(new Header("Add Entity")), BorderLayout.NORTH);
+        this.add(form, BorderLayout.CENTER);
     }
 
 }
