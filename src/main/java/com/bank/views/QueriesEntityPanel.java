@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class QueriesEntityPanel extends JPanel {
     public QueriesEntityPanel() {
-        DynamicForm form = new DynamicForm("Entity Type", Constants.ADD_ENTITY_OPTIONS);
+        DynamicForm form = new DynamicForm("Entity Type", Constants.QUERIES_OPTIONS);
 
         this.setBorder(new EmptyBorder(24, 24, 24, 24)); // add spacing
         this.setLayout(new BorderLayout(21, 12));

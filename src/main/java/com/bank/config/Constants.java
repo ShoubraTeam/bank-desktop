@@ -5,6 +5,8 @@ import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
 import com.bank.views.forms.delete.DeleteATMForm;
 import com.bank.views.forms.delete.DeleteBranchForm;
+import com.bank.views.forms.queries.Query1View;
+import com.bank.views.forms.queries.Query2View;
 import com.bank.views.tabs.Tab;
 
 /**
@@ -28,6 +30,11 @@ public class Constants {
     public static final DynamicFormOption[] DELETE_ENTITY_OPTIONS = {
             new DynamicFormOption("ATM", new DeleteATMForm()),
             new DynamicFormOption("Branch", new DeleteBranchForm()),
+    };
+
+    public static final DynamicFormOption[] QUERIES_OPTIONS = {
+            new DynamicFormOption("Query 1", new Query1View()),
+            new DynamicFormOption("Query 2", new Query2View()),
     };
 
     /**
