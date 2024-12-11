@@ -47,6 +47,6 @@ public class Constants {
             new Tab("View Entity", "ViewEntity", new ViewEntityPanel()),
             new Tab("Add Entity", "AddEntity", new AddEntityPanel()),
             new Tab("Delete Entity", "DeleteEntity", new DeleteEntityPanel()),
-            new Tab("Queries", "AddEntity", new QueriesEntityPanel()),
+            new Tab("Queries", "Queries", new QueriesEntityPanel()),
     };
 }
