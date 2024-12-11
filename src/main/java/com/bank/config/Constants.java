@@ -1,10 +1,11 @@
 package com.bank.config;
 
+import com.bank.views.*;
 import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
+import com.bank.views.forms.delete.DeleteATMForm;
+import com.bank.views.forms.delete.DeleteBranchForm;
 import com.bank.views.tabs.Tab;
-import com.bank.views.AddEntityPanel;
-import com.bank.views.ViewEntityPanel;
 
 /**
  * A utility class that defines constant values used throughout the application.
@@ -24,6 +25,11 @@ public class Constants {
             new DynamicFormOption("Loan", new AddLoanForm()),
     };
 
+    public static final DynamicFormOption[] DELETE_ENTITY_OPTIONS = {
+            new DynamicFormOption("ATM", new DeleteATMForm()),
+            new DynamicFormOption("Branch", new DeleteBranchForm()),
+    };
+
     /**
      * An array of {@link Tab} objects representing the available tabs in the
      * application's navigation panel. Each tab is associated with a label,
@@ -33,5 +39,7 @@ public class Constants {
     public static final Tab[] TABS = {
             new Tab("View Entity", "ViewEntity", new ViewEntityPanel()),
             new Tab("Add Entity", "AddEntity", new AddEntityPanel()),
+            new Tab("Delete Entity", "DeleteEntity", new DeleteEntityPanel()),
+            new Tab("Queries", "AddEntity", new QueriesEntityPanel()),
     };
 }
