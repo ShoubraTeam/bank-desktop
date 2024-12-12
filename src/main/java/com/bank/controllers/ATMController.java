@@ -43,7 +43,7 @@ public class ATMController {
                     String status = resultSet.getString("status");
 
                     // Output the result
-                    System.out.printf("ID: %d, ATM Type: %s, Capacity: %s, ATM Type: %s, Status: %s%n", id, atmType, capacity, balance, status);
+                    System.out.printf("ID: %d, Location: %s, ATM Type: %s, Capacity: %s, Balance: %s, ATM Type: %s, Status: %s%n", id, location, atmType, capacity, balance, atmType, status);
                 }
             }
         } catch (Exception err) {
