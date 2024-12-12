@@ -5,7 +5,8 @@ import java.awt.*;
 
 public class RowPanelTwoItems<T1 extends Component, T2 extends Component> extends JPanel {
     private T2 object2;
-
+    RowPanelTwoItems()
+    {}
     public RowPanelTwoItems(T1 object1, T2 object2) {
         this.setLayout(new BorderLayout(0, 8));
         this.add(object1, BorderLayout.NORTH);
