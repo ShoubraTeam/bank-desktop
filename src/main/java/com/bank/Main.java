@@ -1,5 +1,6 @@
 package com.bank;
 
+import com.bank.config.Env;
 import com.bank.views.Application;
 
 /**
@@ -23,6 +24,7 @@ public class Main {
      * @param args command-line arguments (not used in this application)
      */
     public static void main(String[] args) {
+        Env.load();
         javax.swing.SwingUtilities.invokeLater(Application::new);
     }
 }
