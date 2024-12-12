@@ -13,7 +13,7 @@ public class EntityConstants {
         ATM Constants
      */
 
-    public static final String[] ATM_TYPES = {"Single", "Double"};
+    public static final String[] ATM_TYPES = {"SINGLE", "DOUBLE"};
     public static final RowPanelTwoItems<?,?>[] ATM_ADD_ATTRIBUTES = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("Location"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Balance"), new TextField()),
