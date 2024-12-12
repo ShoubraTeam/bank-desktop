@@ -5,6 +5,7 @@ import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
 import com.bank.views.forms.delete.DeleteATMForm;
 import com.bank.views.forms.delete.DeleteBranchForm;
+import com.bank.views.forms.modify.*;
 import com.bank.views.forms.queries.Query1View;
 import com.bank.views.forms.queries.Query2View;
 import com.bank.views.tabs.Tab;
@@ -26,6 +27,16 @@ public class Constants {
             new DynamicFormOption("Bank Account", new AddBankAccountForm()),
             new DynamicFormOption("Loan", new AddLoanForm()),
     };
+    public static final DynamicFormOption[] MODIFY_ENTITY_OPTIONS = {
+            new DynamicFormOption("ATM", new ModifyATMFrom()),
+            new DynamicFormOption("Branch", new ModifyBranchForm()),
+            new DynamicFormOption("Customer", new ModifyCustomerForm()),
+            new DynamicFormOption("Transaction", new ModifyTransactionForm()),
+            new DynamicFormOption("Credit Card", new ModifyCreditCardForm()),
+            new DynamicFormOption("Transfers", new ModifyTransfersForm()),
+            new DynamicFormOption("Bank Account", new ModifyBankAccountForm()),
+            new DynamicFormOption("Loan", new ModifyLoanForm()),
+    };
 
     public static final DynamicFormOption[] DELETE_ENTITY_OPTIONS = {
             new DynamicFormOption("ATM", new DeleteATMForm()),
@@ -46,6 +57,7 @@ public class Constants {
     public static final Tab[] TABS = {
             new Tab("View Entity", "ViewEntity", new ViewEntityPanel()),
             new Tab("Add Entity", "AddEntity", new AddEntityPanel()),
+            new Tab("Modify Entity", "ModifyEntity", new ModifyEntityPanel()),
             new Tab("Delete Entity", "DeleteEntity", new DeleteEntityPanel()),
             new Tab("Queries", "Queries", new QueriesEntityPanel()),
     };
