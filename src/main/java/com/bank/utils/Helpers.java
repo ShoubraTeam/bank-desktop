@@ -44,7 +44,7 @@ public class Helpers {
         return values;
     }
 
-    public static LinkedListPair getValuesFromInputsModify(RowPanelThreeItems<?, ?, ?>[] attrs) {
+    public static HashMapPair getValuesFromInputsModify(RowPanelThreeItems<?, ?, ?>[] attrs) {
         HashMap<String,String> values = new HashMap<String,String>();
         HashMap<String,String> wherevalues = new HashMap<String,String>();
 
@@ -114,7 +114,7 @@ public class Helpers {
 
         }
 
-        return new LinkedListPair(values, wherevalues);
+        return new HashMapPair(values, wherevalues);
     }
 
 
