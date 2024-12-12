@@ -4,8 +4,8 @@ import com.bank.views.*;
 import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
 import com.bank.views.forms.delete.*;
-import com.bank.views.forms.queries.Query1View;
-import com.bank.views.forms.queries.Query2View;
+import com.bank.views.forms.queries.*;
+
 import com.bank.views.tabs.Tab;
 
 /**
@@ -38,8 +38,25 @@ public class Constants {
     };
 
     public static final DynamicFormOption[] QUERIES_OPTIONS = {
-            new DynamicFormOption("Query 1", new Query1View()),
-            new DynamicFormOption("Query 2", new Query2View()),
+            new DynamicFormOption("List all customers who joined in the last X months.", new Query1View()),
+            new DynamicFormOption("Retrieve customers who do not have any associated bank accounts.", new Query2View()),
+            new DynamicFormOption("List accounts with a balance below the average balance.", new Query3View()),
+            new DynamicFormOption("Find the total balance of all accounts.", new Query4View()),
+            new DynamicFormOption("Retrieve accounts with transactions exceeding X in the last month.", new Query5View()),
+            new DynamicFormOption("Find the total balance of all bank accounts related to a specific customer.", new Query6View()),
+            new DynamicFormOption("Find customers who have taken out loans larger than X.", new Query7View()),
+            new DynamicFormOption("List the total loan amounts issued by each branch.", new Query8View()),
+            new DynamicFormOption("Find the total transaction amount per day for the last X days.", new Query9View()),
+            new DynamicFormOption("List the top X highest transactions made in the past year.", new Query10View()),
+            new DynamicFormOption("Find the total transaction amount by each customer in the last month.", new Query11View()),
+            new DynamicFormOption("Retrieve all credit cards expiring within the next X months.", new Query12View()),
+            new DynamicFormOption("Find customers who have credit card limits exceeding X.", new Query13View()),
+            new DynamicFormOption("List ATMs that processed more than X in the last month.", new Query14View()),
+            new DynamicFormOption("Retrieve ATMs with no transactions in the last X months.", new Query15View()),
+            new DynamicFormOption("Find the average transaction amount for each ATM.", new Query16View()),
+            new DynamicFormOption("Find the branch with the highest number of bank accounts.", new Query17View()),
+            new DynamicFormOption("Retrieve branches that issued loans in the last month.", new Query18View()),
+            new DynamicFormOption("List branches with a total balance across accounts exceeding X.", new Query19View()),
     };
 
     /**

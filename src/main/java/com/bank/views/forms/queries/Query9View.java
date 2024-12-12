@@ -16,15 +16,15 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Query1View extends Form {
-    public Query1View() {
+public class Query9View extends Form {
+    public Query9View() {
         Button submitBtn = new Button("Run Query");
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new GridLayout(10, 1, 12, 12));
         formPanel.setBorder(new EmptyBorder(18, 18, 18, 18));
 
         this.setLayout(new BorderLayout(12, 12));
-        for (RowPanelTwoItems row : EntityConstants.QUERY_ONE) {
+        for (RowPanelTwoItems row : EntityConstants.QUERY_NINE) {
             formPanel.add(row);
         }
 
@@ -39,7 +39,7 @@ public class Query1View extends Form {
 
     public ActionListener submit() {
         return (e) -> {
-            ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.QUERY_ONE);
+            ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.QUERY_NINE);
             // ADD YOUR CODE HERE
             System.out.println(Arrays.toString(values.toArray()));
         };
