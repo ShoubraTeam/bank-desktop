@@ -97,4 +97,37 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Number of months"), new ComboBox(LOAN_NUMBER_OF_MONTHS)),
             new RowPanelTwoItems<Label, Component>(new Label("Settled"), new JCheckBox()),
     };
+    public static final RowPanelTwoItems<?,?>[] LOAN_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Loan ID"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] BRANCH_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Branch ID"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] CUSTOMER_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Customer National Number"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] BANK_ACCOUNT_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Bank Account ID"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] TRANSACTIONS_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Transactions ID"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] TRANSFERS_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Transfers ID"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] CREDIT_CARD_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Card Number"), new TextField()),
+
+    };
+    public static final RowPanelTwoItems<?,?>[] ATM_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("ATM ID"), new TextField()),
+
+    };
+
 }

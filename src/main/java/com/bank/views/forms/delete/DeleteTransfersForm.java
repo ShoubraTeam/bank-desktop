@@ -16,15 +16,15 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DeleteBranchForm extends Form {
-    public DeleteBranchForm() {
+public class DeleteTransfersForm extends Form {
+    public DeleteTransfersForm() {
         Button submitBtn = new Button("Delete");
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new GridLayout(10, 1, 12, 12));
         formPanel.setBorder(new EmptyBorder(18, 18, 18, 18));
 
         this.setLayout(new BorderLayout(12, 12));
-        for (RowPanelTwoItems row : EntityConstants.BRANCH_DELETE_ATTRIBUTES) {
+        for (RowPanelTwoItems row : EntityConstants.TRANSFERS_DELETE_ATTRIBUTES) {
             formPanel.add(row);
         }
 
@@ -39,7 +39,7 @@ public class DeleteBranchForm extends Form {
 
     public ActionListener submit() {
         return (e) -> {
-            ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.BRANCH_DELETE_ATTRIBUTES);
+            ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.TRANSFERS_DELETE_ATTRIBUTES);
             // ADD YOUR CODE HERE
             System.out.println(Arrays.toString(values.toArray()));
         };
