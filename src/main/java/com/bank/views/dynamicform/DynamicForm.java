@@ -27,7 +27,5 @@ public class DynamicForm extends JPanel {
     public void setActiveView(String name) {
         CardLayout layout = (CardLayout) view.getLayout();
         layout.show(view, name);
-        view.revalidate();
-        view.repaint();
     }
 }

@@ -131,7 +131,7 @@ public class EntityConstants {
     /*
         Bank Account Constants
     */
-    public static final String[] ACCOUNT_TYPE = {"Savings", "Checking"};
+    public static final String[] ACCOUNT_TYPE = {"Saving", "Checking"};
     public static final RowPanelTwoItems<?, ?>[] BANK_ACCOUNT_ADD_ATTRIBUTES = new RowPanelTwoItems[]{
             new RowPanelTwoItems<Label, Component>(new Label("Balance"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Account Type"), new ComboBox(ACCOUNT_TYPE)),
@@ -152,7 +152,6 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Reason"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Assurance"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Number of months"), new ComboBox(LOAN_NUMBER_OF_MONTHS)),
-            new RowPanelTwoItems<Label, Component>(new Label("Settled"), new JCheckBox()),
     };
 
     public static final RowPanelThreeItems<?, ?,?>[] LOAN_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{

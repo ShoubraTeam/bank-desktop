@@ -1,6 +1,7 @@
 package com.bank.controllers;
 
 import com.bank.database.DatabaseProvider;
+import com.bank.services.EntityService;
 import com.bank.utils.Dialog;
 
 import java.sql.Connection;
@@ -11,20 +12,11 @@ import java.util.ArrayList;
 public class ATMController {
     public static void add(ArrayList<String> values) { // ["location", "balance", "capacity", "atm_type"]
         String insertSQL = "INSERT INTO atm(location, balance, capacity, atm_type) values(?,?::numeric,?::numeric,?::atm_type)";
-        try (Connection connection = DatabaseProvider.getDataSource().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL)) {
-            int index = 1;
-            for (String v : values) {
-                preparedStatement.setString(index++, v);
-            }
-            int rowsAffected = preparedStatement.executeUpdate();
+        EntityService.insert(insertSQL, values, "Added ATM successfully!", "Unable to create a ATM: ");
+    }
 
-            if (rowsAffected > 0) {
-                Dialog.showSuccessfulMessage("Added ATM successfully!");
-            }
-        } catch (Exception err) {
-            Dialog.showErrorMessage("Failed to add ATM: " + err.getMessage());
-        }
+    public static ArrayList<String> getAllIds() {
+        return EntityService.getAllIds("atm", "atm_id");
     }
 
     public static void getAll() {

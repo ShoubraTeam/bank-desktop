@@ -2,6 +2,9 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.BranchController;
+import com.bank.controllers.CustomerController;
+import com.bank.controllers.LoanController;
 import com.bank.ui.Button;
 import com.bank.ui.ComboBox;
 import com.bank.ui.Label;
@@ -48,8 +51,7 @@ public class AddLoanForm extends Form {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.LOAN_ADD_ATTRIBUTES);
             values.addFirst(customerIdComboBox.getSelectedItem().toString());
-            // TODO: ADD YOUR SQL CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            LoanController.add(values);
         };
     }
 
@@ -57,6 +59,8 @@ public class AddLoanForm extends Form {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         customerIdComboBox.removeAllItems();
-        // TODO: GET CUSTOMER IDS HERE
+        for (String id : CustomerController.getAllIds()) {
+            customerIdComboBox.addItem(id);
+        }
     }
 }

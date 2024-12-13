@@ -26,7 +26,7 @@ public class ModifyBankAccountForm extends Form {
         formPanel.setBorder(new EmptyBorder(18, 18, 18, 18));
 
         this.setLayout(new BorderLayout(12, 12));
-        for (RowPanelTwoItems row : EntityConstants.BANK_ACCOUNT_ADD_ATTRIBUTES) {
+        for (RowPanelTwoItems row : EntityConstants.BANK_ACCOUNT_MODIFY_ATTRIBUTES) {
             formPanel.add(row);
         }
 

@@ -1,7 +1,10 @@
 package com.bank;
 
+import com.bank.config.EntityConstants;
 import com.bank.config.Env;
+import com.bank.database.DatabaseProvider;
 import com.bank.views.Application;
+import com.bank.views.forms.RowPanelTwoItems;
 
 /**
  * The entry point for the Bank System application.
@@ -25,6 +28,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Env.load();
+        DatabaseProvider.getDataSource(); // to load database upon startup
         javax.swing.SwingUtilities.invokeLater(Application::new);
     }
 }
