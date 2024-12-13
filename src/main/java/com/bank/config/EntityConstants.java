@@ -16,13 +16,9 @@ public class EntityConstants {
         ATM Constants
      */
 
-<<<<<<< HEAD
-    public static final String[] ATM_TYPES = {"Single", "Double"};
-    public static final RowPanelTwoItems<?, ?>[] ATM_ADD_ATTRIBUTES = new RowPanelTwoItems[]{
-=======
     public static final String[] ATM_TYPES = {"SINGLE", "DOUBLE"};
     public static final RowPanelTwoItems<?,?>[] ATM_ADD_ATTRIBUTES = new RowPanelTwoItems[] {
->>>>>>> 2302206dbcf76f0d4c19f1a5cdee3be84f0c052e
+
             new RowPanelTwoItems<Label, Component>(new Label("Location"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Balance"), new TextField()),
             new RowPanelTwoItems<Label, Component>(new Label("Capacity"), new TextField()),
@@ -158,7 +154,7 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Number of months"), new ComboBox(LOAN_NUMBER_OF_MONTHS)),
             new RowPanelTwoItems<Label, Component>(new Label("Settled"), new JCheckBox()),
     };
-<<<<<<< HEAD
+
     public static final RowPanelThreeItems<?, ?,?>[] LOAN_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
             new RowPanelThreeItems<Label, Component, Component>(new Label("Loan ID"), new TextField(), new RowPanelOneItem(new RadioButton(CheckBoxesModifyConstants[0]))),
             new RowPanelThreeItems<Label, Component,Component>(new Label("Amount"), new TextField(),new CheckBoxPanel(new RadioButton(CheckBoxesModifyConstants[0]), new RadioButton(CheckBoxesModifyConstants[1]))),
@@ -167,7 +163,7 @@ public class EntityConstants {
             new RowPanelThreeItems<Label, Component,Component>(new Label("Number of months"), new ComboBox(LOAN_NUMBER_OF_MONTHS),new CheckBoxPanel(new RadioButton(CheckBoxesModifyConstants[0]), new RadioButton(CheckBoxesModifyConstants[1]))),
             new RowPanelThreeItems<Label, Component,Component>(new Label("Settled"), new JCheckBox(),new CheckBoxPanel(new RadioButton(CheckBoxesModifyConstants[0]), new RadioButton(CheckBoxesModifyConstants[1]))),
     };
-=======
+
     public static final RowPanelTwoItems<?,?>[] LOAN_DELETE_ATTRIBUTES = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("Loan ID"), new TextField()),
 
@@ -253,5 +249,5 @@ public class EntityConstants {
     };
 
 
->>>>>>> 2302206dbcf76f0d4c19f1a5cdee3be84f0c052e
+
 }
