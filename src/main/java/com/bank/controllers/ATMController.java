@@ -64,4 +64,30 @@ public class ATMController {
             Dialog.showErrorMessage("Failed to remove ATM: " + err.getMessage());
         }
     }
+
+
+       /* public static List<Customer> getCustomersJoinedInLastXMonths(int months) {
+        String querySQL = "SELECT * FROM customers WHERE join_date >= CURRENT_DATE - INTERVAL '? months'";
+        List<Customer> customers = new ArrayList<>();
+
+        try (Connection connection = DatabaseProvider.getDataSource().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(querySQL)) {
+
+            preparedStatement.setInt(1, months);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Customer customer = new Customer();
+                customer.setId(resultSet.getInt("id"));
+                customer.setName(resultSet.getString("name"));
+                customer.setJoinDate(resultSet.getDate("join_date"));
+                customers.add(customer);
+            }
+        } catch (Exception err) {
+            Dialog.showErrorMessage("Failed to fetch customers: " + err.getMessage());
+        }
+
+        return customers;
+        }*/
+
 }

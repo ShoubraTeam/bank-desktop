@@ -2,6 +2,8 @@ package com.bank.views.forms.delete;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.ATMController;
+import com.bank.controllers.BranchController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -40,8 +42,7 @@ public class DeleteBranchForm extends Form {
     public ActionListener submit() {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.BRANCH_DELETE_ATTRIBUTES);
-            // ADD YOUR CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            BranchController.delete(values.get(0));
         };
     }
 }
