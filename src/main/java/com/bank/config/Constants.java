@@ -4,14 +4,7 @@ import com.bank.views.*;
 import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
 
-import com.bank.views.forms.delete.DeleteATMForm;
-import com.bank.views.forms.delete.DeleteBranchForm;
 import com.bank.views.forms.modify.*;
-import com.bank.views.forms.queries.Query1View;
-import com.bank.views.forms.queries.Query2View;
-
-import com.bank.views.forms.delete.*;
-import com.bank.views.forms.queries.*;
 
 
 import com.bank.views.forms.delete.*;

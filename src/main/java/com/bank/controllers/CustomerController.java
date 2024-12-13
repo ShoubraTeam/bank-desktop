@@ -4,10 +4,8 @@ import com.bank.database.DatabaseProvider;
 import com.bank.services.EntityService;
 import com.bank.utils.Dialog;
 
-import javax.swing.text.html.parser.Entity;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class CustomerController {

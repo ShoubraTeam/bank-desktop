@@ -6,7 +6,6 @@ import com.bank.utils.Dialog;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 public class BankAccountController {
     public static void add(ArrayList<String> values) { // ["customerid", "balance", "accounttype"]

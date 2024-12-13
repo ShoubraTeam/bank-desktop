@@ -2,9 +2,7 @@ package com.bank.views.forms.delete;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
-import com.bank.controllers.ATMController;
 import com.bank.controllers.TransactionsController;
-import com.bank.controllers.TransfersController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -17,7 +15,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DeleteTransactionForm extends Form {
     public DeleteTransactionForm() {

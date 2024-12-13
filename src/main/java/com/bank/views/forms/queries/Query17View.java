@@ -6,7 +6,6 @@ import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
-import com.bank.views.forms.RowPanelTwoItems;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

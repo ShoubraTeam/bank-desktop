@@ -4,10 +4,8 @@ import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
 import com.bank.controllers.BankAccountController;
 import com.bank.controllers.CreditCardController;
-import com.bank.controllers.CustomerController;
 import com.bank.ui.Button;
 import com.bank.ui.ComboBox;
-import com.bank.ui.Label;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
@@ -19,7 +17,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddCreditCardForm extends Form {
     private ComboBox accountIdComboBox;

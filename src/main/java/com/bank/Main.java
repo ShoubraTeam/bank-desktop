@@ -1,10 +1,8 @@
 package com.bank;
 
-import com.bank.config.EntityConstants;
 import com.bank.config.Env;
 import com.bank.database.DatabaseProvider;
 import com.bank.views.Application;
-import com.bank.views.forms.RowPanelTwoItems;
 
 /**
  * The entry point for the Bank System application.

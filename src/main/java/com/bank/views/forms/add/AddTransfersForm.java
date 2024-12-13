@@ -2,7 +2,6 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
-import com.bank.controllers.ATMController;
 import com.bank.controllers.BankAccountController;
 import com.bank.controllers.BranchController;
 import com.bank.controllers.TransfersController;
@@ -23,7 +22,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddTransfersForm extends Form {
     private ComboBox branchIdComboBox;

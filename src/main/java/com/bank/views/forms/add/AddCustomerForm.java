@@ -2,7 +2,6 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
-import com.bank.controllers.BankAccountController;
 import com.bank.controllers.BranchController;
 import com.bank.controllers.CustomerController;
 import com.bank.ui.Button;
@@ -19,7 +18,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddCustomerForm extends Form {
     private ComboBox branchComboBox;
