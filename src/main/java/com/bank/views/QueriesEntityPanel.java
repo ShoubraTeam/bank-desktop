@@ -18,4 +18,5 @@ public class QueriesEntityPanel extends JPanel {
         this.add(new RowPanelOneItem<Header>(new Header("Queries")), BorderLayout.NORTH);
         this.add(form, BorderLayout.CENTER);
     }
+
 }

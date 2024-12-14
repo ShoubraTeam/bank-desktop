@@ -6,7 +6,6 @@ import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
-import com.bank.views.forms.RowPanelTwoItems;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -24,9 +23,7 @@ public class Query1View extends Form {
         formPanel.setBorder(new EmptyBorder(18, 18, 18, 18));
 
         this.setLayout(new BorderLayout(12, 12));
-        for (RowPanelTwoItems row : EntityConstants.QUERY_ONE) {
-            formPanel.add(row);
-        }
+
 
         JScrollPane scrollPane = new JScrollPane(formPanel);
         scrollPane.setPreferredSize(new Dimension(500, 600));

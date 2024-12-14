@@ -2,6 +2,7 @@ package com.bank.views.forms.queries;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.QueriesController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -38,6 +39,7 @@ public class Query2View extends Form {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.QUERY_TWO);
             // ADD YOUR CODE HERE
+            QueriesController.getCustomersWithoutBankAccounts ();
             System.out.println(Arrays.toString(values.toArray()));
         };
     }
