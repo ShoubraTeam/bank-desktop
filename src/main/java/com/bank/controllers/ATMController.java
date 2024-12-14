@@ -6,7 +6,7 @@ import com.bank.utils.Dialog;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ATMController {
     public static void add(ArrayList<String> values) { // ["location", "balance", "capacity", "atm_type"]
@@ -24,6 +24,53 @@ public class ATMController {
             }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to add ATM: " + err.getMessage());
+        }
+    }
+
+    public static void update(LinkedHashMap<String, Object> values) {
+        String wherekey = "";
+        if (!values.isEmpty()) {
+            StringBuilder setClause = new StringBuilder();
+            int count = 0;
+            for (String column : values.keySet()) {
+                if (count == 0) {
+                    wherekey = column;
+                    count++;
+                } else {
+                    if (setClause.length() > 0) {
+                        setClause.append(", ");
+                    }
+                    setClause.append(column).append(" = ?");
+                }
+            }
+            String updateSQL = "UPDATE ATM SET " + setClause.toString() + " WHERE " + wherekey + " = ?";
+            try (Connection connection = DatabaseProvider.getDataSource().getConnection();
+                 PreparedStatement preparedStatement = connection.prepareStatement(updateSQL)) {
+
+                int index = 1;
+                count = 0;
+                for (Object value : values.values()) {
+                    if (count == 0) {
+                        count++;
+                    } else {
+                        preparedStatement.setObject(index++, Integer.parseInt(value.toString()));  // Set value in order of appearance
+                    }
+                }
+                preparedStatement.setObject(index++, Integer.parseInt(values.get(wherekey).toString()));  // Set value in order of appearance
+
+
+
+
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    Dialog.showSuccessfulMessage("Update ATM successfully!");
+                }
+            } catch (Exception err) {
+                Dialog.showErrorMessage("Failed to update ATM: " + err.getMessage());
+            }
+        } else {
+            Dialog.showErrorMessage("Please select attribute to modify ");
         }
     }
 

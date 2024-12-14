@@ -1,16 +1,13 @@
 package com.bank.utils;
 
-import com.bank.config.EntityConstants;
-import com.bank.ui.CheckBoxPanel;
-import com.bank.views.forms.RowPanelOneItem;
+import com.bank.ui.CheckBox;
 import com.bank.views.forms.RowPanelThreeItems;
 import com.bank.views.forms.RowPanelTwoItems;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Helpers {
     // add padding - got from chatgpt
@@ -40,81 +37,37 @@ public class Helpers {
             }
             values.add(value);
         }
-
         return values;
     }
 
-    public static HashMapPair getValuesFromInputsModify(RowPanelThreeItems<?, ?, ?>[] attrs) {
-        HashMap<String,String> values = new HashMap<String,String>();
-        HashMap<String,String> wherevalues = new HashMap<String,String>();
-
+    public static LinkedHashMap<String, Object> getValuesFromInputsModify(RowPanelThreeItems<?, ?, ?>[] attrs) {
+        LinkedHashMap<String, Object> values = new LinkedHashMap<>();
+        int count = 0;
+        Object value;
+        String key;
         for (RowPanelThreeItems<?, ?, ?> row : attrs) {
-            String value;
-            String key;
-            if (row.getThirdComponent() instanceof CheckBoxPanel<?, ?>) {
-
-                Enumeration<AbstractButton> buttons = ((CheckBoxPanel<?, ?>) row.getThirdComponent()).getGroup().getElements();
-                while (buttons.hasMoreElements()) {
-                    JRadioButton button = (JRadioButton) buttons.nextElement();
-                    if (button.isSelected()) {
-                        if (EntityConstants.CheckBoxesModifyConstants[1].equals(button.getText())) {
-                            if (row.getSecondComponent() instanceof JTextField) {
-                                value = ((JTextField) row.getSecondComponent()).getText();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else if (row.getSecondComponent() instanceof JCheckBox) {
-                                value = String.valueOf(((JCheckBox) row.getSecondComponent()).isSelected());
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else {
-                                value = ((JComboBox<?>) row.getSecondComponent()).getSelectedItem().toString();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            }
-                            values.put(key,value);
-                        } else if (EntityConstants.CheckBoxesModifyConstants[0].equals(button.getText())) {
-                            if (row.getSecondComponent() instanceof JTextField) {
-                                value = ((JTextField) row.getSecondComponent()).getText();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else if (row.getSecondComponent() instanceof JCheckBox) {
-                                value = String.valueOf(((JCheckBox) row.getSecondComponent()).isSelected());
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else {
-                                value = ((JComboBox<?>) row.getSecondComponent()).getSelectedItem().toString();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            }
-                            wherevalues.put(key,value);
+            if (count == 0) {
+                value = ((JTextField) row.getSecondComponent()).getText();
+                key = ((JLabel) row.getFirstComponent()).getText();
+                values.put(key, value);
+                count++;
+            } else {
+                if (row.getThirdComponent() instanceof CheckBox) {
+                    if (((CheckBox) row.getThirdComponent()).isSelected()) {
+                        if (row.getSecondComponent() instanceof JTextField) {
+                            value = ((JTextField) row.getSecondComponent()).getText();
+                            key = ((JLabel) row.getFirstComponent()).getText();
+                            values.put(key, value);
+                        } else if (row.getSecondComponent() instanceof JCheckBox) {
+                            value = String.valueOf(((JCheckBox) row.getSecondComponent()).isSelected());
+                            key = ((JLabel) row.getFirstComponent()).getText();
+                            values.put(key, value);
                         }
-
                     }
                 }
-
-            } else if (row.getThirdComponent() instanceof RowPanelOneItem<?>) {
-
-                Enumeration<AbstractButton> buttons = ((RowPanelOneItem<?>) row.getThirdComponent()).getComponentIfRadioButton().getElements();
-                while (buttons.hasMoreElements()) {
-                    JRadioButton button = (JRadioButton) buttons.nextElement();
-                    if (button.isSelected()) {
-                        if (EntityConstants.CheckBoxesModifyConstants[0].equals(button.getText())) {
-                            if (row.getSecondComponent() instanceof JTextField) {
-                                value = ((JTextField) row.getSecondComponent()).getText();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else if (row.getSecondComponent() instanceof JCheckBox) {
-                                value = String.valueOf(((JCheckBox) row.getSecondComponent()).isSelected());
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            } else {
-                                value = ((JComboBox<?>) row.getSecondComponent()).getSelectedItem().toString();
-                                key=((JLabel) row.getFirstComponent()).getText();
-                            }
-                            wherevalues.put(key,value);
-                        }
-
-                    }
-                }
-
             }
-
-
         }
-
-        return new HashMapPair(values, wherevalues);
+        return values;
     }
 
 

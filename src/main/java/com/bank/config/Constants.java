@@ -43,7 +43,6 @@ public class Constants {
             new DynamicFormOption("Customer", new ModifyCustomerForm()),
             new DynamicFormOption("Transaction", new ModifyTransactionForm()),
             new DynamicFormOption("Credit Card", new ModifyCreditCardForm()),
-            new DynamicFormOption("Transfers", new ModifyTransfersForm()),
             new DynamicFormOption("Bank Account", new ModifyBankAccountForm()),
             new DynamicFormOption("Loan", new ModifyLoanForm()),
     };

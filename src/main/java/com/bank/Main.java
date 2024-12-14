@@ -1,6 +1,7 @@
 package com.bank;
 
 import com.bank.config.Env;
+import com.bank.controllers.ATMController;
 import com.bank.views.Application;
 
 /**
@@ -25,6 +26,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Env.load();
+        ATMController.getAll();
         javax.swing.SwingUtilities.invokeLater(Application::new);
     }
 }

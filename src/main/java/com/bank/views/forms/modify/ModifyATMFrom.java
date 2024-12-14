@@ -2,9 +2,9 @@ package com.bank.views.forms.modify;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.ATMController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
-import com.bank.utils.HashMapPair;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
 import com.bank.views.forms.RowPanelThreeItems;
@@ -16,6 +16,8 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class ModifyATMFrom extends Form {
 
@@ -41,15 +43,13 @@ public class ModifyATMFrom extends Form {
     }
     public ActionListener submit() {
         return (e) -> {
-            HashMapPair linkedListPair = Helpers.getValuesFromInputsModify((RowPanelThreeItems<?, ?, ?>[]) EntityConstants.ATM_MODIFY_ATTRIBUTES);
+            LinkedHashMap<String,Object> values = Helpers.getValuesFromInputsModify((RowPanelThreeItems<?, ?, ?>[]) EntityConstants.ATM_MODIFY_ATTRIBUTES);
             // ADD YOUR CODE HERE
             //first list contain the values that we put in update sentence
-            System.out.println(Arrays.toString(linkedListPair.getFirstList().keySet().toArray()));
-            System.out.println(Arrays.toString(linkedListPair.getFirstList().values().toArray()));
-            System.out.println();
-            //second list contain the values that we put in the where condition
-            System.out.println(Arrays.toString(linkedListPair.getSecondList().keySet().toArray()));
-            System.out.println(Arrays.toString(linkedListPair.getSecondList().values().toArray()));
+            System.out.println(Arrays.toString(values.keySet().toArray()));
+            System.out.println(Arrays.toString(values.values().toArray()));
+
+            ATMController.update(values);
         };
     }
 }
