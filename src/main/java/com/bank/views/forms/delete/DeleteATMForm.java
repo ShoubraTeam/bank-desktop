@@ -2,6 +2,7 @@ package com.bank.views.forms.delete;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.ATMController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -14,7 +15,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DeleteATMForm extends Form {
     public DeleteATMForm() {
@@ -41,7 +41,8 @@ public class DeleteATMForm extends Form {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.ATM_DELETE_ATTRIBUTES);
             // ADD YOUR CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            ATMController.delete(values.get(0));
+            //System.out.println(Arrays.toString(values.toArray()));
         };
     }
 }

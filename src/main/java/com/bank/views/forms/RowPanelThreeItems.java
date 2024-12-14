@@ -1,6 +1,5 @@
 package com.bank.views.forms;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class RowPanelThreeItems<T1 extends Component, T2 extends Component, T3 extends Component> extends RowPanelTwoItems {

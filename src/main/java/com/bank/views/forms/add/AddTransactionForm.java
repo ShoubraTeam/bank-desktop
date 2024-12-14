@@ -2,6 +2,9 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.ATMController;
+import com.bank.controllers.BankAccountController;
+import com.bank.controllers.TransactionsController;
 import com.bank.ui.Button;
 import com.bank.ui.ComboBox;
 import com.bank.ui.Label;
@@ -19,7 +22,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddTransactionForm extends Form {
     private ComboBox atmIdComboBox;
@@ -53,10 +55,9 @@ public class AddTransactionForm extends Form {
     public ActionListener submit() {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.TRANSACTION_ADD_ATTRIBUTES);
-            values.addFirst(atmIdComboBox.getSelectedItem().toString());
             values.addFirst(accountIdComboBox.getSelectedItem().toString());
-            // TODO: ADD YOUR SQL CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            values.addFirst(atmIdComboBox.getSelectedItem().toString());
+            TransactionsController.add(values);
         };
     }
 
@@ -65,6 +66,11 @@ public class AddTransactionForm extends Form {
         super.paintComponent(g);
         atmIdComboBox.removeAllItems();
         accountIdComboBox.removeAllItems();
-        // TODO: GET ATM IDS AND ACCOUNTS IDS HERE
+        for (String id : ATMController.getAllIds()) {
+            atmIdComboBox.addItem(id);
+        }
+        for (String id : BankAccountController.getAllIds()) {
+            accountIdComboBox.addItem(id);
+        }
     }
 }

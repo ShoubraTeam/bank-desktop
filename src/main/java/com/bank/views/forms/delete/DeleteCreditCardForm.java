@@ -2,6 +2,7 @@ package com.bank.views.forms.delete;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.CreditCardController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -14,7 +15,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DeleteCreditCardForm extends Form {
     public DeleteCreditCardForm() {
@@ -40,8 +40,7 @@ public class DeleteCreditCardForm extends Form {
     public ActionListener submit() {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.CREDIT_CARD_DELETE_ATTRIBUTES);
-            // ADD YOUR CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            CreditCardController.delete(values.get(0));
         };
     }
 }

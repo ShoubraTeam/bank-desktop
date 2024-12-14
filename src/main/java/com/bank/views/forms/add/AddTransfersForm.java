@@ -2,6 +2,9 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.BankAccountController;
+import com.bank.controllers.BranchController;
+import com.bank.controllers.TransfersController;
 import com.bank.ui.Button;
 import com.bank.ui.ComboBox;
 import com.bank.ui.Label;
@@ -19,7 +22,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddTransfersForm extends Form {
     private ComboBox branchIdComboBox;
@@ -56,11 +58,10 @@ public class AddTransfersForm extends Form {
     public ActionListener submit() {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.TRANSFER_ADD_ATTRIBUTES);
-            values.addFirst(branchIdComboBox.getSelectedItem().toString());
-            values.addFirst(senderIdComboBox.getSelectedItem().toString());
             values.addFirst(receiverIdComboBox.getSelectedItem().toString());
-            // TODO: ADD YOUR SQL CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            values.addFirst(senderIdComboBox.getSelectedItem().toString());
+            values.addFirst(branchIdComboBox.getSelectedItem().toString());
+            TransfersController.add(values);
         };
     }
 
@@ -70,6 +71,14 @@ public class AddTransfersForm extends Form {
         branchIdComboBox.removeAllItems();
         senderIdComboBox.removeAllItems();
         receiverIdComboBox.removeAllItems();
-        // TODO: GET ATM IDS AND ACCOUNTS IDS HERE
+        for (String id : BranchController.getAllIds()) {
+            branchIdComboBox.addItem(id);
+        }
+        for (String id : BankAccountController.getAllIds()) {
+            senderIdComboBox.addItem(id);
+        }
+        for (String id : BankAccountController.getAllIds()) {
+            receiverIdComboBox.addItem(id);
+        }
     }
 }

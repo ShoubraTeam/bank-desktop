@@ -2,11 +2,11 @@ package com.bank.views.forms.queries;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.QueriesController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
-import com.bank.views.forms.RowPanelTwoItems;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -39,6 +39,7 @@ public class Query3View extends Form {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.QUERY_THREE);
             // ADD YOUR CODE HERE
+            QueriesController.getAccountsBelowAverageBalance();
             System.out.println(Arrays.toString(values.toArray()));
         };
     }

@@ -2,6 +2,7 @@ package com.bank.views.forms.delete;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.BankAccountController;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
@@ -14,7 +15,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DeleteBankAccountForm extends Form {
     public DeleteBankAccountForm() {
@@ -40,8 +40,9 @@ public class DeleteBankAccountForm extends Form {
     public ActionListener submit() {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.BANK_ACCOUNT_DELETE_ATTRIBUTES);
-            // ADD YOUR CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+
+            BankAccountController.delete(values.get(0));
+           // System.out.println(Arrays.toString(values.toArray()));
         };
     }
 }

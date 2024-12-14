@@ -2,6 +2,8 @@ package com.bank.views.forms.add;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.controllers.BranchController;
+import com.bank.controllers.CustomerController;
 import com.bank.ui.Button;
 import com.bank.ui.ComboBox;
 import com.bank.ui.Label;
@@ -16,7 +18,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddCustomerForm extends Form {
     private ComboBox branchComboBox;
@@ -48,8 +49,7 @@ public class AddCustomerForm extends Form {
         return (e) -> {
             ArrayList<String> values = Helpers.getValuesFromInputs(EntityConstants.CUSTOMER_ADD_ATTRIBUTES);
             values.addFirst(branchComboBox.getSelectedItem().toString());
-            // TODO: ADD YOUR SQL CODE HERE
-            System.out.println(Arrays.toString(values.toArray()));
+            CustomerController.add(values);
         };
     }
 
@@ -57,6 +57,8 @@ public class AddCustomerForm extends Form {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         branchComboBox.removeAllItems();
-        // TODO: GET BRANCHES HERE
+        for (String id : BranchController.getAllIds()) {
+            branchComboBox.addItem(id);
+        }
     }
 }

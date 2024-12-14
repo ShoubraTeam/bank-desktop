@@ -1,30 +1,30 @@
 package com.bank.controllers;
 
 import com.bank.database.DatabaseProvider;
+import com.bank.services.EntityService;
 import com.bank.utils.Dialog;
 
+<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
+=======
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+>>>>>>> 4cbe5de84a57c660a80c3479465388f28a451edb
 
 public class ATMController {
     public static void add(ArrayList<String> values) { // ["location", "balance", "capacity", "atm_type"]
         String insertSQL = "INSERT INTO atm(location, balance, capacity, atm_type) values(?,?::numeric,?::numeric,?::atm_type)";
-        try (Connection connection = DatabaseProvider.getDataSource().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL)) {
-            int index = 1;
-            for (String v : values) {
-                preparedStatement.setString(index++, v);
-            }
-            int rowsAffected = preparedStatement.executeUpdate();
+        EntityService.insert(insertSQL, values, "Added ATM successfully!", "Unable to create a ATM: ");
+    }
 
-            if (rowsAffected > 0) {
-                Dialog.showSuccessfulMessage("Added ATM successfully!");
-            }
-        } catch (Exception err) {
-            Dialog.showErrorMessage("Failed to add ATM: " + err.getMessage());
-        }
+    public static ArrayList<String> getAllIds() {
+        return EntityService.getAllIds("atm", "atm_id");
     }
 
     public static void update(LinkedHashMap<String, Object> values) {
@@ -111,4 +111,33 @@ public class ATMController {
             Dialog.showErrorMessage("Failed to remove ATM: " + err.getMessage());
         }
     }
-}
+
+
+       /* public static List<Customer> getCustomersJoinedInLastXMonths(int months) {
+        String querySQL = "SELECT * FROM customers WHERE join_date >= CURRENT_DATE - INTERVAL '? months'";
+        List<Customer> customers = new ArrayList<>();
+
+        try (Connection connection = DatabaseProvider.getDataSource().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(querySQL)) {
+
+            preparedStatement.setInt(1, months);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Customer customer = new Customer();
+                customer.setId(resultSet.getInt("id"));
+                customer.setName(resultSet.getString("name"));
+                customer.setJoinDate(resultSet.getDate("join_date"));
+                customers.add(customer);
+            }
+        } catch (Exception err) {
+            Dialog.showErrorMessage("Failed to fetch customers: " + err.getMessage());
+        }
+
+        return customers;
+        }*/
+
+       }
+
+
+
