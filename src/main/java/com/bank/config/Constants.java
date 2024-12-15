@@ -53,8 +53,8 @@ public class Constants {
     };
 
     public static final DynamicFormOption[] QUERIES_OPTIONS = {
-            new DynamicFormOption("List all customers who joined in the last X months.", new Query1View()),
-            new DynamicFormOption("Retrieve customers who do not have any associated bank accounts.", new Query2View()),
+            new DynamicFormOption("List all customers who joined in the last X days.", new Query1View()),
+            new DynamicFormOption("List customers who do not have any associated bank accounts.", new Query2View()),
             new DynamicFormOption("List accounts with a balance below the average balance.", new Query3View()),
             new DynamicFormOption("Find the total balance of all accounts.", new Query4View()),
             new DynamicFormOption("Retrieve accounts with transactions exceeding X in the last month.", new Query5View()),

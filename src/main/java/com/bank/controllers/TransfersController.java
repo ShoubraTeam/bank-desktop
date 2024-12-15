@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class TransfersController {
+    public static Object[][] data = null;
+    public static  Object[] columns_name = null;
     public static void add(ArrayList<String> values) { // ["branch_id", "sender_id", "receiver_id", "amount"]
         String insertSQL = "INSERT INTO transfers(branch_id, sender_id, receiver_id, amount) values(?::numeric, ?::numeric, ?::numeric, ?::numeric)";
         EntityService.insert(insertSQL, values, "Added transfer successfully!", "Unable to create a transfer: ");

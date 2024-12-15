@@ -196,19 +196,14 @@ public class EntityConstants {
 
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_ONE = new RowPanelTwoItems[] {
-            new RowPanelTwoItems<Label, Component>(new Label("Customers who joined in the last X months."), new TextField()),
+            new RowPanelTwoItems<Label, Component>(new Label("Customers who joined in the last X days."), new TextField()),
 
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_TWO = new RowPanelTwoItems[] {
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_THREE = new RowPanelTwoItems[] {
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_FOUR = new RowPanelTwoItems[] {
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_FIVE = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("Accounts with transactions exceeding X in the last month"), new TextField()),
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_SIX = new RowPanelTwoItems[] {
+            new RowPanelTwoItems<Label, Component>(new Label("Total balance of all bank accounts related to X customer"), new TextField()),
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_SEVEN = new RowPanelTwoItems[] {
            new RowPanelTwoItems<Label, Component>(new Label("Customers who have taken out loans larger than X"), new TextField()),
@@ -221,8 +216,7 @@ public class EntityConstants {
     public static final RowPanelTwoItems<?,?>[] QUERY_TEN = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("Top X highest transactions made in the past year."), new TextField()),
     };
-    public static final RowPanelTwoItems<?,?>[] QUERY_ELEVEN = new RowPanelTwoItems[] {
-    };
+
     public static final RowPanelTwoItems<?,?>[] QUERY_TWELVE = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("All credit cards expiring within the next X months"), new TextField()),
 
@@ -235,12 +229,6 @@ public class EntityConstants {
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_FIFTEEN = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("ATMs with no transactions in the last X months"), new TextField()),
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_SIXTEEN = new RowPanelTwoItems[] {
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_SEVENTEEN = new RowPanelTwoItems[] {
-    };
-    public static final RowPanelTwoItems<?,?>[] QUERY_EIGHTEEN = new RowPanelTwoItems[] {
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_NINETEEN = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("Branches with a total balance across accounts exceeding X"), new TextField()),

@@ -16,6 +16,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+
+
 public class DeleteCustomerForm extends Form {
     public DeleteCustomerForm() {
         Button submitBtn = new Button("Delete");
@@ -29,7 +31,7 @@ public class DeleteCustomerForm extends Form {
         }
 
         JScrollPane scrollPane = new JScrollPane(formPanel);
-        scrollPane.setPreferredSize(new Dimension(500, 600));
+        scrollPane.setPreferredSize(new Dimension(50, 60));
         scrollPane.setBorder(new MatteBorder(3, 3, 3, 3, Colors.SECONDARY_COLOR));
         this.add(scrollPane, BorderLayout.CENTER);
 
