@@ -32,7 +32,8 @@ public class TransactionsController {
     public static void QueryNine(int input) {
         int rows;
         int columns = 0;
-        String query = "SELECT transaction_date, SUM(amount) FROM transactions WHERE transaction_date >= CURRENT_DATE - INTERVAL '" + input + " days' GROUP BY transaction_date";
+        String query = "SELECT created_at::date AS transaction_date, SUM(amount) AS total_amount FROM transaction WHERE created_at >= CURRENT_DATE - INTERVAL '" + input + " days' GROUP BY created_at::date ORDER BY transaction_date";
+        ;
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -90,7 +91,7 @@ public class TransactionsController {
     public static void QueryTen(int input) {
         int rows;
         int columns = 0;
-        String query = "SELECT * FROM transaction WHERE created_at >= CURRENT_DATE - INTERVAL '1 year' ORDER BY amount DESC LIMIT " + input;
+        String query = "SELECT * FROM transaction WHERE created_at >= CURRENT_DATE - INTERVAL '1 week' ORDER BY amount DESC LIMIT " + input;
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -149,7 +150,7 @@ public class TransactionsController {
     public static void QueryEleven() {
         int rows;
         int columns = 0;
-        String query =  "SELECT customer_id, SUM(amount) FROM transaction WHERE created_at >= CURRENT_DATE - INTERVAL '1 month' GROUP BY customer_id";
+        String query =  "SELECT c.national_id, c.f_name, c.l_name, SUM(t.amount) AS total_amount FROM transaction t JOIN bank_account b ON t.accountid = b.account_id JOIN customer c ON b.customer_id = c.national_id WHERE t.created_at >= CURRENT_DATE - INTERVAL '1 month' GROUP BY c.national_id, c.f_name, c.l_name ORDER BY total_amount DESC;";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");

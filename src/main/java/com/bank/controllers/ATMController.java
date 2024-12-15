@@ -186,7 +186,7 @@ public class ATMController {
 
         int rows;
         int columns = 0;
-        String query = "SELECT atm_id, AVG(balance) FROM transaction GROUP BY atm_id";
+        String query = "SELECT atm_id, AVG(amount) AS Averagre_Balance FROM transaction GROUP BY atm_id";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");

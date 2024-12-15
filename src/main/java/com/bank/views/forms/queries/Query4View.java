@@ -68,11 +68,11 @@ public class Query4View extends Form {
             BankAccountController.QueryFour();
 
             // إنشاء الجدول بالبيانات
-            JTable table = new JTable(new DefaultTableModel(CustomerController.data, CustomerController.columns_name));
+            JTable table = new JTable(new DefaultTableModel(BankAccountController.data, BankAccountController.columns_name));
             JScrollPane scrollPane = new JScrollPane(table); // إضافة التمرير للجدول
             tablePanel.add(scrollPane, BorderLayout.CENTER);
-            System.out.println("Data: " + Arrays.toString(CustomerController.data));
-            System.out.println("Columns: " + Arrays.toString(CustomerController.columns_name));
+            System.out.println("Data: " + Arrays.toString(BankAccountController.data));
+            System.out.println("Columns: " + Arrays.toString(BankAccountController.columns_name));
             // عرض الجدول بشكل صحيح
             tablePanel.setVisible(true);
             this.add(tablePanel);

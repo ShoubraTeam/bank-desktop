@@ -94,7 +94,8 @@ public class CreditCardController {
 
         int rows;
         int columns = 0;
-        String query = "SELECT * FROM customer WHERE national_id IN (SELECT customer_id FROM credit_card WHERE balance > " + input + ")";
+        String query = "SELECT c.national_id, c.f_name, c.l_name, cc.card_number, cc.balance FROM credit_card cc JOIN bank_account b ON cc.account_id = b.account_id JOIN customer c ON b.customer_id = c.national_id WHERE cc.balance > " + input;
+
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");

@@ -214,7 +214,7 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Total transaction amount per day for the last X days."), new TextField()),
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_TEN = new RowPanelTwoItems[] {
-            new RowPanelTwoItems<Label, Component>(new Label("Top X highest transactions made in the past year."), new TextField()),
+            new RowPanelTwoItems<Label, Component>(new Label("Top X highest transactions made in the last week."), new TextField()),
     };
 
     public static final RowPanelTwoItems<?,?>[] QUERY_TWELVE = new RowPanelTwoItems[] {
@@ -222,7 +222,7 @@ public class EntityConstants {
 
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_THIRTEEN= new RowPanelTwoItems[] {
-            new RowPanelTwoItems<Label, Component>(new Label("Customers who have credit card limits exceeding X"), new TextField()),
+            new RowPanelTwoItems<Label, Component>(new Label("Customers who have credit card balance exceeding X"), new TextField()),
     };
     public static final RowPanelTwoItems<?,?>[] QUERY_FOURTEEN = new RowPanelTwoItems[] {
             new RowPanelTwoItems<Label, Component>(new Label("ATMs that processed more than X in the last month"), new TextField()),

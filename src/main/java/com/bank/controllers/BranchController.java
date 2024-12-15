@@ -37,7 +37,7 @@ public class BranchController {
 
         int rows;
         int columns = 0;
-        String query ="SELECT branch_id, COUNT(account_id) FROM bank_account GROUP BY branch_id ORDER BY COUNT(account_id) DESC LIMIT 1";
+        String query ="SELECT b.branch_id, b.location, COUNT(ba.account_id) AS num_accounts FROM branch b JOIN customer c ON b.branch_id = c.branch_id JOIN bank_account ba ON c.national_id = ba.customer_id GROUP BY b.branch_id, b.location ORDER BY num_accounts DESC LIMIT 1";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -98,7 +98,7 @@ public class BranchController {
 
         int rows;
         int columns = 0;
-        String query = "SELECT branch_id FROM loan WHERE created_at >= CURRENT_DATE - INTERVAL '1 month'";
+        String query = "SELECT b.branch_id, b.location, l.loan_id, l.amount, l.created_at FROM branch b JOIN customer c ON b.branch_id = c.branch_id JOIN loan l ON c.national_id = l.customer_id WHERE l.created_at >= CURRENT_DATE - INTERVAL '1 month' ORDER BY b.branch_id, l.created_at;";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -159,7 +159,7 @@ public class BranchController {
 
         int rows;
         int columns = 0;
-        String query = "SELECT branch_id FROM bank_account GROUP BY branch_id HAVING SUM(balance) > " + input;
+        String query = "SELECT b.branch_id, b.location, SUM(ba.balance) AS total_balance FROM branch b JOIN customer c ON b.branch_id = c.branch_id JOIN bank_account ba ON c.national_id = ba.customer_id GROUP BY b.branch_id, b.location HAVING SUM(ba.balance) >" + input;
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");

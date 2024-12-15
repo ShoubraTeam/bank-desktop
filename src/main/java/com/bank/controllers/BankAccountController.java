@@ -10,16 +10,16 @@ public class BankAccountController {
     public static Object[][] data = null;
     public static  Object[] columns_name = null;
     public static void add(ArrayList<String> values) { // ["customerid", "balance", "accounttype"]
-        String insertSQL = "INSERT INTO bank_account(customerid, balance, accounttype) values(?,?::numeric,?::accounttype_type)";
+        String insertSQL = "INSERT INTO bank_account(customer_id, balance, account_type) values(?,?::numeric,?::accounttype_type)";
         EntityService.insert(insertSQL, values, "Added bank account successfully!", "Unable to create a bank account: ");
     }
 
     public static ArrayList<String> getAllIds() {
-        return EntityService.getAllIds("bank_account", "accountid");
+        return EntityService.getAllIds("bank_account", "account_id");
     }
 
     public static void delete(String id) {
-        String deleteSQL = "DELETE FROM bank_account WHERE accountid = ?::numeric";
+        String deleteSQL = "DELETE FROM bank_account WHERE account_id = ?::numeric";
         try (Connection connection = DatabaseProvider.getDataSource().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
             preparedStatement.setString(1, id);
@@ -94,7 +94,7 @@ public class BankAccountController {
     public static void QueryFour() {
         int rows;
         int columns = 0;
-        String query = "SELECT SUM(balance) FROM bank_account";
+        String query = "SELECT SUM(balance) AS Total_Balance FROM bank_account";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -153,7 +153,7 @@ public class BankAccountController {
     public static void QueryFive(int input) {
         int rows;
         int columns = 0;
-        String query = "SELECT * FROM bank_account WHERE account_id IN (SELECT DISTINCT accountid FROM transaction WHERE amount > " + input + " AND created_at >= CURRENT_DATE - INTERVAL '1 month')";
+        String query = "SELECT * FROM bank_account WHERE account_id IN (SELECT DISTINCT accountid FROM transaction WHERE (amount > " + input + ") AND (created_at >= CURRENT_DATE - INTERVAL '1 month'))";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
@@ -210,10 +210,10 @@ public class BankAccountController {
     }
 
 
-    public static void QuerySix(int input) {
+    public static void QuerySix(String input) {
         int rows;
         int columns = 0;
-        String query = "SELECT SUM(balance) FROM bank_account WHERE customer_id = " + input;
+        String query = "SELECT SUM(balance) as Total_Balance FROM bank_account WHERE customer_id =" + "'" + input + "'";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");

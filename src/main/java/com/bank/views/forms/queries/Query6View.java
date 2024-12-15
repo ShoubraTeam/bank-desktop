@@ -2,12 +2,12 @@ package com.bank.views.forms.queries;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
-import com.bank.controllers.ATMController;
+
 import com.bank.controllers.BankAccountController;
-import com.bank.controllers.CustomerController;
+
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
-import com.bank.views.QueriesEntityPanel;
+
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
 import com.bank.views.forms.RowPanelTwoItems;
@@ -65,7 +65,7 @@ public class Query6View extends Form {
             tablePanel.revalidate(); // تحديث تخطيط الـ tablePanel
             tablePanel.repaint();    // إعادة رسم الـ tablePanel
 
-            BankAccountController.QuerySix(Integer.parseInt(values.get(0)));
+            BankAccountController.QuerySix((values.get(0)));
 
             // إنشاء الجدول بالبيانات
             JTable table = new JTable(new DefaultTableModel(BankAccountController.data, BankAccountController.columns_name));

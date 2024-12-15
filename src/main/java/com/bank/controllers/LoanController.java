@@ -92,7 +92,7 @@ public class LoanController {
     public static void QueryEight() {
         int rows;
         int columns = 0;
-        String query ="SELECT * FROM customer ";
+        String query ="SELECT c.branch_id, SUM(l.amount) AS total_loan_amount FROM loan l JOIN customer c ON l.customer_id = c.national_id GROUP BY c.branch_id ORDER BY c.branch_id";
         try {
             // Load the MySQL JDBC driver
             Class.forName("org.postgresql.Driver");
