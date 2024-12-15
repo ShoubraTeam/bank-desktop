@@ -1,12 +1,13 @@
 package com.bank.utils;
 
+import com.bank.config.AttributeTypes;
 import com.bank.ui.CheckBox;
 import com.bank.views.forms.RowPanelThreeItems;
 import com.bank.views.forms.RowPanelTwoItems;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class Helpers {
@@ -49,7 +50,7 @@ public class Helpers {
             if (count == 0) {
                 value = ((JTextField) row.getSecondComponent()).getText();
                 key = ((JLabel) row.getFirstComponent()).getText();
-                values.put(key, value);
+                values.put(key, ParsingFunction(key, value.toString()));
                 count++;
             } else {
                 if (row.getThirdComponent() instanceof CheckBox) {
@@ -57,11 +58,11 @@ public class Helpers {
                         if (row.getSecondComponent() instanceof JTextField) {
                             value = ((JTextField) row.getSecondComponent()).getText();
                             key = ((JLabel) row.getFirstComponent()).getText();
-                            values.put(key, value);
+                            values.put(key, ParsingFunction(key, value.toString()));
                         } else if (row.getSecondComponent() instanceof JCheckBox) {
                             value = String.valueOf(((JCheckBox) row.getSecondComponent()).isSelected());
                             key = ((JLabel) row.getFirstComponent()).getText();
-                            values.put(key, value);
+                            values.put(key, ParsingFunction(key, value.toString()));
                         }
                     }
                 }
@@ -70,5 +71,19 @@ public class Helpers {
         return values;
     }
 
-
+    private static Object ParsingFunction(String key, Object value) {
+        for (String att : AttributeTypes.BOOLEANS) {
+            if (key.equals(att)) {
+                return Boolean.parseBoolean(value.toString());
+            }
+        }
+        for (String att : AttributeTypes.INTEGERS) {
+            if (key.equals(att)) {
+                return Integer.parseInt(value.toString());
+            }
+        }
+        return value.toString();
+    }
 }
+
+

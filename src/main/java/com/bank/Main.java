@@ -1,11 +1,7 @@
 package com.bank;
-
 import com.bank.config.Env;
-<<<<<<< HEAD
 import com.bank.controllers.ATMController;
-=======
 import com.bank.database.DatabaseProvider;
->>>>>>> 4cbe5de84a57c660a80c3479465388f28a451edb
 import com.bank.views.Application;
 
 /**
@@ -30,11 +26,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Env.load();
-<<<<<<< HEAD
         ATMController.getAll();
-=======
         DatabaseProvider.getDataSource(); // to load database upon startup
->>>>>>> 4cbe5de84a57c660a80c3479465388f28a451edb
         javax.swing.SwingUtilities.invokeLater(Application::new);
     }
 }

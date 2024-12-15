@@ -1,21 +1,15 @@
 package com.bank.controllers;
 
+
 import com.bank.database.DatabaseProvider;
 import com.bank.services.EntityService;
 import com.bank.utils.Dialog;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.*;
-=======
-import java.sql.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
->>>>>>> 4cbe5de84a57c660a80c3479465388f28a451edb
+
 
 public class ATMController {
     public static void add(ArrayList<String> values) { // ["location", "balance", "capacity", "atm_type"]
@@ -27,52 +21,6 @@ public class ATMController {
         return EntityService.getAllIds("atm", "atm_id");
     }
 
-    public static void update(LinkedHashMap<String, Object> values) {
-        String wherekey = "";
-        if (!values.isEmpty()) {
-            StringBuilder setClause = new StringBuilder();
-            int count = 0;
-            for (String column : values.keySet()) {
-                if (count == 0) {
-                    wherekey = column;
-                    count++;
-                } else {
-                    if (setClause.length() > 0) {
-                        setClause.append(", ");
-                    }
-                    setClause.append(column).append(" = ?");
-                }
-            }
-            String updateSQL = "UPDATE ATM SET " + setClause.toString() + " WHERE " + wherekey + " = ?";
-            try (Connection connection = DatabaseProvider.getDataSource().getConnection();
-                 PreparedStatement preparedStatement = connection.prepareStatement(updateSQL)) {
-
-                int index = 1;
-                count = 0;
-                for (Object value : values.values()) {
-                    if (count == 0) {
-                        count++;
-                    } else {
-                        preparedStatement.setObject(index++, Integer.parseInt(value.toString()));  // Set value in order of appearance
-                    }
-                }
-                preparedStatement.setObject(index++, Integer.parseInt(values.get(wherekey).toString()));  // Set value in order of appearance
-
-
-
-
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    Dialog.showSuccessfulMessage("Update ATM successfully!");
-                }
-            } catch (Exception err) {
-                Dialog.showErrorMessage("Failed to update ATM: " + err.getMessage());
-            }
-        } else {
-            Dialog.showErrorMessage("Please select attribute to modify ");
-        }
-    }
 
     public static void getAll() {
         String selectSQL = "SELECT * FROM atm";
@@ -137,7 +85,7 @@ public class ATMController {
         return customers;
         }*/
 
-       }
+}
 
 
 

@@ -3,14 +3,9 @@ package com.bank.config;
 import com.bank.views.*;
 import com.bank.views.dynamicform.DynamicFormOption;
 import com.bank.views.forms.add.*;
-
 import com.bank.views.forms.modify.*;
-
-
 import com.bank.views.forms.delete.*;
 import com.bank.views.forms.queries.*;
-
-
 import com.bank.views.tabs.Tab;
 
 /**

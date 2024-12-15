@@ -2,11 +2,12 @@ package com.bank.views.forms.modify;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.config.TablesName;
+import com.bank.services.QueryServices;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
-import com.bank.views.forms.RowPanelThreeItems;
 import com.bank.views.forms.RowPanelTwoItems;
 
 import javax.swing.*;
@@ -14,8 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class ModifyBankAccountForm extends Form {
 
@@ -40,11 +40,8 @@ public class ModifyBankAccountForm extends Form {
     }
     public ActionListener submit() {
         return (e) -> {
-            HashMap<String,Object> values = Helpers.getValuesFromInputsModify((RowPanelThreeItems<?, ?, ?>[]) EntityConstants.BANK_ACCOUNT_MODIFY_ATTRIBUTES);
-            // ADD YOUR CODE HERE
-            //first list contain the values that we put in update sentence
-            System.out.println(Arrays.toString(values.keySet().toArray()));
-            System.out.println(Arrays.toString(values.values().toArray()));
+            LinkedHashMap<String,Object> values = Helpers.getValuesFromInputsModify(EntityConstants.BANK_ACCOUNT_MODIFY_ATTRIBUTES);
+            QueryServices.update(values, TablesName.BANK_ACCOUNT);
         };
     }
 

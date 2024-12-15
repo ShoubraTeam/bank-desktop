@@ -1,20 +1,16 @@
 package com.bank.controllers;
 
 import com.bank.database.DatabaseProvider;
-import com.bank.services.EntityService;
 import com.bank.services.QueryServices;
 import com.bank.utils.Dialog;
 import com.bank.views.forms.Form;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
-import java.util.ArrayList;
 public class QueriesController extends Form {
     private static JPanel tablePanel;
     public static void getRecentCustomers(int months) {

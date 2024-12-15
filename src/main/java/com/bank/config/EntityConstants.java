@@ -3,7 +3,6 @@ package com.bank.config;
 import com.bank.ui.*;
 import com.bank.ui.Label;
 import com.bank.ui.TextField;
-import com.bank.views.forms.RowPanelOneItem;
 import com.bank.views.forms.RowPanelThreeItems;
 import com.bank.views.forms.RowPanelTwoItems;
 
@@ -48,10 +47,10 @@ public class EntityConstants {
     };
     public static final RowPanelThreeItems<?, ?, ?>[] CUSTOMER_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
 
-            new RowPanelThreeItems<Label, Component, Component>(new Label("National ID"), new TextField(), new JPanel()),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("National_ID"), new TextField(), new JPanel()),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Address"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Email"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Phone Number"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Phone_Number"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Dead"), new JCheckBox(), new CheckBox(MODIFY_CONSTANT)),
     };
 
@@ -65,8 +64,8 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Branch Type"), new ComboBox(BRANCH_TYPE)),
     };
     public static final RowPanelTwoItems<?, ?>[] BRANCH_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Branch ID"), new TextField(), new JPanel()),
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Phone Number"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Branch_ID"), new TextField(), new JPanel()),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Phone_Number"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
     };
 
 
@@ -79,7 +78,7 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Transaction Type"), new ComboBox(TRANSACTION_TYPE)),
     };
     public static final RowPanelThreeItems<?, ?, ?>[] TRANSACTION_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Transaction ID"), new TextField(), new JPanel()),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Transaction_ID"), new TextField(), new JPanel()),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Amount"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
     };
 
@@ -98,7 +97,7 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Card Type"), new ComboBox(CARD_TYPE)),
     };
     public static final RowPanelThreeItems<?, ?, ?>[] CREDIT_CARD_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
-            new RowPanelThreeItems(new Label("Card Number"), new TextField(), new JPanel()),
+            new RowPanelThreeItems(new Label("Card_Number"), new TextField(), new JPanel()),
             new RowPanelThreeItems(new Label("Balance"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
 
     };
@@ -121,7 +120,7 @@ public class EntityConstants {
     };
 
     public static final RowPanelThreeItems<?, ?, ?>[] BANK_ACCOUNT_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Account ID"), new TextField(), new JPanel()),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Account_ID"), new TextField(), new JPanel()),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Balance"), new TextField(), new CheckBox(MODIFY_CONSTANT)),
     };
 
@@ -137,7 +136,7 @@ public class EntityConstants {
     };
 
     public static final RowPanelThreeItems<?, ?, ?>[] LOAN_MODIFY_ATTRIBUTES = new RowPanelThreeItems[]{
-            new RowPanelThreeItems<Label, Component, Component>(new Label("Loan ID"), new TextField(), new JPanel()),
+            new RowPanelThreeItems<Label, Component, Component>(new Label("Loan_ID"), new TextField(), new JPanel()),
             new RowPanelThreeItems<Label, Component, Component>(new Label("Settled"), new JCheckBox(), new CheckBox(MODIFY_CONSTANT)),
     };
 
