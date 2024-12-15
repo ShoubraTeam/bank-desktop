@@ -2,9 +2,9 @@ package com.bank.ui;
 
 import javax.swing.*;
 
-public class RadioButton extends JRadioButton {
+public class CheckBox extends JCheckBox {
 
-    public RadioButton(String Label) {
+    public CheckBox(String Label) {
         super(Label);
         this.setFocusPainted(false);
 

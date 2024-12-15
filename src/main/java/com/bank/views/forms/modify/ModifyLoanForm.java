@@ -2,12 +2,12 @@ package com.bank.views.forms.modify;
 
 import com.bank.config.Colors;
 import com.bank.config.EntityConstants;
+import com.bank.config.TablesName;
+import com.bank.services.QueryServices;
 import com.bank.ui.Button;
 import com.bank.utils.Helpers;
-import com.bank.utils.HashMapPair;
 import com.bank.views.forms.Form;
 import com.bank.views.forms.RowPanelOneItem;
-import com.bank.views.forms.RowPanelThreeItems;
 import com.bank.views.forms.RowPanelTwoItems;
 
 import javax.swing.*;
@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
+import java.util.LinkedHashMap;
 
 public class ModifyLoanForm extends Form {
     public ModifyLoanForm() {
@@ -39,15 +39,8 @@ public class ModifyLoanForm extends Form {
     }
     public ActionListener submit() {
         return (e) -> {
-            HashMapPair linkedListPair = Helpers.getValuesFromInputsModify((RowPanelThreeItems<?, ?, ?>[]) EntityConstants.LOAN_MODIFY_ATTRIBUTES);
-            // ADD YOUR CODE HERE
-            //first list contain the values that we put in update sentence
-            System.out.println(Arrays.toString(linkedListPair.getFirstList().keySet().toArray()));
-            System.out.println(Arrays.toString(linkedListPair.getFirstList().values().toArray()));
-            System.out.println();
-            //second list contain the values that we put in the where condition
-            System.out.println(Arrays.toString(linkedListPair.getSecondList().keySet().toArray()));
-            System.out.println(Arrays.toString(linkedListPair.getSecondList().values().toArray()));
+            LinkedHashMap<String,Object> values = Helpers.getValuesFromInputsModify(EntityConstants.LOAN_MODIFY_ATTRIBUTES);
+            QueryServices.update(values, TablesName.LOAN);
         };
     }
 }
