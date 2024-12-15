@@ -17,7 +17,7 @@ public class TransfersController {
     }
 
     public static void delete(String id) {
-        String deleteSQL = "DELETE FROM transfers WHERE id = ?::numeric";
+        String deleteSQL = "DELETE FROM transfers WHERE transfer_id = ?::numeric";
         try (Connection connection = DatabaseProvider.getDataSource().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
             preparedStatement.setString(1, id);

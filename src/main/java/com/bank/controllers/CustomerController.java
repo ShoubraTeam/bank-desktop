@@ -24,7 +24,7 @@ public class CustomerController {
     }
 
     public static void delete(String id) {
-        String deleteSQL = "DELETE FROM customer WHERE national_id = ?::numeric";
+        String deleteSQL = "DELETE FROM customer WHERE national_id = ?";
         try (Connection connection = DatabaseProvider.getDataSource().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
             preparedStatement.setString(1, id);

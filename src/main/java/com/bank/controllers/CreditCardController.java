@@ -16,7 +16,7 @@ public class CreditCardController {
     }
 
     public static void delete(String id) {
-        String deleteSQL = "DELETE FROM credit_card WHERE cardnumber= ?::numeric";
+        String deleteSQL = "DELETE FROM credit_card WHERE card_number= ?";
         try (Connection connection = DatabaseProvider.getDataSource().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
             preparedStatement.setString(1, id);
