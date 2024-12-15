@@ -28,6 +28,9 @@ public class BranchController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Branch");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Branch: " + err.getMessage());
         }

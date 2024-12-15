@@ -24,6 +24,9 @@ public class TransactionsController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Transaction");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Transaction: " + err.getMessage());
         }

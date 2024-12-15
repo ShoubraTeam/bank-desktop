@@ -25,6 +25,9 @@ public class TransfersController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Transfer");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Transfer: " + err.getMessage());
         }

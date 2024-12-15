@@ -24,6 +24,9 @@ public class LoanController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Loan");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Loan: " + err.getMessage());
         }

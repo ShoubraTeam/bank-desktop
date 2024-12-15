@@ -27,6 +27,9 @@ public class BankAccountController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Bank Account");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Bank Account: " + err.getMessage());
         }

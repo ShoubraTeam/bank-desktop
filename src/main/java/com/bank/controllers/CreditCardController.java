@@ -24,6 +24,9 @@ public class CreditCardController {
             if (rowsAffected > 0) {
                 Dialog.showSuccessfulMessage("Removed Credit Card");
             }
+            else {
+                Dialog.showSuccessfulMessage("No thing to delete");
+            }
         } catch (Exception err) {
             Dialog.showErrorMessage("Failed to remove Credit Card: " + err.getMessage());
         }
