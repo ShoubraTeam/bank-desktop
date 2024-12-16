@@ -11,7 +11,7 @@ public class BranchController {
     public static Object[][] data = null;
     public static  Object[] columns_name = null;
     public static void add(ArrayList<String> values) { // ["location", "phone", "type"]
-        String insertSQL = "INSERT INTO branch(location, phone, type) values(?,?,?::branch_type)";
+        String insertSQL = "INSERT INTO branch(location, phone_number, type) values(?,?,?::branch_type)";
         EntityService.insert(insertSQL, values, "Added branch successfully!", "Unable to create a branch: ");
     }
 

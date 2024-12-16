@@ -11,7 +11,7 @@ public class CreditCardController {
     public static Object[][] data = null;
     public static  Object[] columns_name = null;
     public static void add(ArrayList<String> values) { // ["location", "balance", "capacity", "atm_type"]
-        String insertSQL = "INSERT INTO credit_card(accountid, cardnumber, balance, cvc, pin, cardtype) values(?::numeric, ?, ?::numeric, ?, ?, ?::cardtype_type)";
+        String insertSQL = "INSERT INTO credit_card(account_id, card_number, balance, cvc, pin, card_type) values(?::numeric, ?, ?::numeric, ?, ?, ?::cardtype_type)";
         EntityService.insert(insertSQL, values, "Added credit card successfully!", "Unable to create a credit card: ");
     }
 
