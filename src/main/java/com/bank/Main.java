@@ -26,7 +26,6 @@ public class Main {
      */
     public static void main(String[] args) {
         Env.load();
-        ATMController.getAll();
         DatabaseProvider.getDataSource(); // to load database upon startup
         javax.swing.SwingUtilities.invokeLater(Application::new);
     }

@@ -209,7 +209,4 @@ public class EntityConstants {
             new RowPanelTwoItems<Label, Component>(new Label("Branches with a total balance across accounts exceeding X"), new TextField()),
 
     };
-
-
-
 }

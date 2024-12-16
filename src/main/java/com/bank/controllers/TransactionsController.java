@@ -11,7 +11,7 @@ public class TransactionsController {
     public static Object[][] data = null;
     public static  Object[] columns_name = null;
     public static void add(ArrayList<String> values) { // ["atm_id", "accountid", "amount", "description", "transaction_type"]
-        String insertSQL = "INSERT INTO transaction(atm_id, accountid, amount, transaction_type) values(?::numeric, ?::numeric, ?::numeric, ?::transaction_type)";
+        String insertSQL = "INSERT INTO transaction(atm_id, account_id, amount, transaction_type) values(?::numeric, ?::numeric, ?::numeric, ?::transaction_type)";
         EntityService.insert(insertSQL, values, "Added transaction successfully!", "Unable to create a transaction: ");
     }
 
